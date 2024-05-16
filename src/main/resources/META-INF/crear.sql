@@ -1,0 +1,3 @@
+CREATE TABLE noticia (id_noticia INT NOT NULL AUTO_INCREMENT, titulo VARCHAR(255) NOT NULL, autor VARCHAR(255), fecha DATE, PRIMARY KEY (id_noticia));
+CREATE TABLE comentario (id_comentario INT NOT NULL AUTO_INCREMENT, texto VARCHAR(255) NOT NULL, autor VARCHAR(255) NOT NULL, id_noticia INT NOT NULL, PRIMARY KEY (id_comentario));
+ALTER TABLE comentario ADD CONSTRAINT comentario_fk0 FOREIGN KEY (id_noticia) REFERENCES noticia(id_noticia);
